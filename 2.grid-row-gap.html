@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Column</title>
+    <style>
+      #content {
+        width: 980px;
+        margin: 0 auto;
+        /* IE display grid */
+        display: -ms-grid;
+
+        display: grid;
+        /* Make grid 3 column equal with to 33.3% */
+        /* grid-template-columns: 33.3% 33.3% 33.3%; */
+
+        /* Make grid 3 column equal to 1 fragment */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+
+        /* Make grid 3 column equal to 1 fragment using repeat 3 times*/
+        grid-template-columns: repeat(3, 1fr);
+
+        /* Make grid 1fr and repeat 20px 1fr 3 times*/
+        /* grid-template-columns: 1fr repeat(3, 20px 1fr); */
+        /* IE repeat syntax */
+        /* -ms-grid-columns: 1fr (20px 1fr) [3]; */
+
+        /* Adding gap */
+        grid-gap: 10px;
+        /* Gap only for column */
+        /* grid-column-gap: 10px;  */
+        /* Gap only for row */
+        /* grid-row-gap: 10px; */
+
+        /* Setting row height */
+        /* Set all row to 200px */
+        /* grid-auto-rows: 200px; */
+        /* Using minimal dan maximal will set minimal rows to 100px and maximal row to auto based on content */
+        /* grid-auto-rows: minmax(100px, auto); */
+
+        /* specify row height */
+        /* grid-template-rows: 200px 80px 100px; */
+        /* specify 3 row and repeat 3 times with min height 200 and maximal height auto */
+        grid-template-rows: repeat(3, minmax(100px, auto));
+      }
+
+      #content div {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        padding: 32px 0;
+      }
+      #content div:nth-child(odd) {
+        background-color: brown;
+      }
+      #content div:nth-child(even) {
+        background-color: cornflowerblue;
+      }
+
+      /* Telkom Test */
+      /* #content div:hover {
+        border: 3px dotted black;
+      }
+
+      .dotted {
+        border: 3px dotted black;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis
+        inventore temporibus nulla provident ipsum, recusandae velit possimus
+        voluptatibus atque iure excepturi iusto ab. Labore, voluptate? Laborum
+        accusantium suscipit culpa facilis.Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Blanditiis inventore temporibus nulla
+        provident ipsum, recusandae velit possimus voluptatibus atque iure
+        excepturi iusto ab. Labore, voluptate? Laborum accusantium suscipit
+        culpa facilis.
+      </div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+    </div>
+
+    <!-- Telkom test -->
+    <!-- <script type="text/javascript">
+        let box = document.getElementsByClassName("box");
+
+        for (let index = 0; index < box.length; index++) {
+          box[index].addEventListener("mouseover", function () {
+            box[index].classList.add("dotted");
+          });
+
+          box[index].addEventListener("mouseout", function () {
+            box[index].classList.remove("dotted");
+          });
+        }
+    </script> -->
+  </body>
+</html>

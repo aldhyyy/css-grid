@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Column</title>
+    <style>
+      #content {
+        width: 980px;
+        margin: 0 auto;
+        /* IE display grid */
+        display: -ms-grid;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        /* Adding gap */
+        grid-gap: 10px;
+      }
+
+      #content div:nth-child(1) {
+      }
+
+      #content div:nth-child(2) {
+      }
+
+      #content div:nth-child(3) {
+      }
+
+      #content div:nth-child(4) {
+        /* ms to support IE */
+        display: grid;
+        display: -ms-grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+
+        /* grid-column: 1/4; */
+        /* Same like above */
+        /* Take default start position and span in 3 columns */
+        grid-column: span 3;
+      }
+
+      p {
+        padding: 20px;
+        border: 1px solid #fff;
+        margin: 0;
+      }
+
+      #content div {
+        text-align: center;
+        color: white;
+        padding: 30px;
+      }
+      #content div:nth-child(odd) {
+        background-color: brown;
+      }
+      #content div:nth-child(even) {
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box nested">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+      </div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+    </div>
+  </body>
+</html>

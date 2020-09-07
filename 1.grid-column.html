@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Column</title>
+    <style>
+      #content {
+        width: 980px;
+        margin: 0 auto;
+        /* IE display grid */
+        display: -ms-grid;
+
+        display: grid;
+        /* Make grid 3 column equal with to 33.3% */
+        /* grid-template-columns: 33.3% 33.3% 33.3%; */
+
+        /* Make grid 3 column equal to 1 fragment */
+        /* grid-template-columns: 1fr 1fr 1fr; */
+
+        /* Make grid 3 column equal to 1 fragment using repeat 3 times*/
+        /* grid-template-columns: repeat(3, 1fr); */
+
+        /* Make grid 1fr and repeat 20px 1fr 3 times*/
+        grid-template-columns: 1fr repeat(3, 20px 1fr);
+        /* IE repeat syntax */
+        /* -ms-grid-columns: 1fr (20px 1fr) [3]; */
+      }
+      #content div {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        padding: 32px 0;
+      }
+      #content div:nth-child(odd) {
+        background-color: brown;
+      }
+      #content div:nth-child(even) {
+        background-color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Area</title>
+
+    <style>
+      #content {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        /* set the grid area by grid name */
+        /* 4 columns 6 rows */
+        /* . for added blank grid */
+        grid-template-areas:
+          "header header header header"
+          "aside . main main"
+          "nav . main main"
+          "section section section section"
+          "section section section section"
+          "footer footer footer footer";
+        grid-gap: 10px;
+      }
+
+      #content > * {
+        background: limegreen;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+      }
+
+      header {
+        /* set the name of the grid area */
+        /* names are free, you can call whatever you want */
+        grid-area: header;
+      }
+
+      section {
+        grid-area: section;
+      }
+
+      main {
+        grid-area: main;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      nav {
+        grid-area: nav;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <header>Header</header>
+      <main>Main</main>
+      <section>Section</section>
+      <aside>Aside</aside>
+      <nav>Nav</nav>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
